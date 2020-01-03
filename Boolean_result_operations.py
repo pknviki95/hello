@@ -9,6 +9,7 @@
  -isdigit()
  -isspace()
  -istitle()
+ -isalnum()
 
 """
 
@@ -74,3 +75,12 @@ print(my_str.isalpha())
 '''
 my_str2="122425"
 print(my_str2.isdigit())
+
+
+#isalnum():
+'''
+- This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
+- It returns false if there is special characters
+'''
+my_str3="@123"
+print(my_str3.isalnum())
