@@ -7,5 +7,5 @@ print (repo.git.status())
 print (repo.git.add( '.' ))
 #commit
 print (repo.git.commit( m='git operations using python scripts' ))
-#now we are one commit ahead
+#now we are one commit ahead#
 print (repo.git.status())
