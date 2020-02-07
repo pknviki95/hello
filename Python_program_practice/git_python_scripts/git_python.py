@@ -9,3 +9,4 @@ print (repo.git.add( '.' ))
 print (repo.git.commit( m='git operations using python scripts' ))
 #now we are one commit ahead#
 print (repo.git.status())
+print(dir(git))
