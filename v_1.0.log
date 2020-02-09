@@ -1,0 +1,23 @@
+Cloning into 'Python_script'...
+git: 'sheckout' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+commit d5eb4bbd2424149231cdc438a83da8f3d227916d
+Author: vigneshwaran M <vikidotcom95@gmail.com>
+Date:   Fri Feb 7 10:07:30 2020 +0530
+
+    git operations using python scripts
+
+diff --git a/Python_program_practice/git_python_scripts/git_python.py b/Python_program_practice/git_python_scripts/git_python.py
+index 499a3be..b0f0204 100644
+--- a/Python_program_practice/git_python_scripts/git_python.py
++++ b/Python_program_practice/git_python_scripts/git_python.py
+@@ -8,5 +8,5 @@ print (repo.git.add( '.' ))
+ #commit
+ print (repo.git.commit( m='git operations using python scripts' ))
+ #now we are one commit ahead#
+-print (repo.git.FetchInfo())
++#print (repo.git.FetchInfo())
+ print(dir(git))
+\ No newline at end of file
