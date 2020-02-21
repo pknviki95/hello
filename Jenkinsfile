@@ -1,3 +1,4 @@
+'''
 pipeline{
         agent any
         stages{
@@ -30,3 +31,29 @@ pipeline{
   }
 }
 }
+'''
+pipeline{
+        agent any
+        stages{
+                stage('pipeline_steps_parallel_build'){
+                        steps{
+                                pipeline(
+                                        checkoutscm: {
+                                                git 'https://github.com/pknviki95/hello.git'
+                                              echo "SCM"
+                                        },
+                                        build: {
+                                                echo "Build"
+                                        },
+                                        test : {
+                                                echo "test"
+                                        }
+                                        deploy: {
+                                                echo "Deploy"
+                                        })
+                        }
+                }
+        }
+                                        
+                                        
+        
