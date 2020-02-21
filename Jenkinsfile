@@ -1,7 +1,7 @@
 pipeline{
         agent any
         stages{
-                stage ( 'parallel_test){
+                stage ( 'parallel_test'){
                        parallel{
                 stage ('checkout SCM'){
                         steps{
