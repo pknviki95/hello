@@ -3,6 +3,9 @@ pipeline{
         stage ('checkout SCM'){
             git 'https://github.com/pknviki95/hello.git'
         }
+        parallel{
+
+        
         stage ('build'){
             fileExists '/home/pknviki95/Desktop/Python'
             sh 'ls'
@@ -12,6 +15,8 @@ pipeline{
         }
         stage ('Deploy'){
             echo 'Deploy to Docker'
+        }
+
         }
     }
 }

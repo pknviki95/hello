@@ -17,17 +17,17 @@ def git_log(git_url,tag_name,tag_pos):
 
             
         if  tag_pos == None:
-            subprocess.run('git sheckout master',stdout=f,stderr=f,stdin=f,shell=True)
+            subprocess.run('git checkout master',stdout=f,stderr=f,stdin=f,shell=True)
             
         else:
-            subprocess.run('git sheckout '+tag_pos,stdout=f,stderr=f,stdin=f,shell=True)
+            subprocess.run('git checkout '+tag_pos,stdout=f,stderr=f,stdin=f,shell=True)
             
         subprocess.run('git tag '+tag_name ,stdout=f,stderr=f,stdin=f,shell=True) 
         subprocess.run('git push origin '+tag_name,stdout=f,stderr=f,stdin=f,shell=True)  
         subprocess.run('git show '+tag_name ,stdout=f,stderr=f,stdin=f,shell=True)
         
         subprocess.run('git add .' ,stdout=f,stderr=f,stdin=f,shell=True)
-        git_commit_message = input("your message")
+        git_commit_message = input("your message: ")
         subprocess.run('git commit -m '+git_commit_message ,stdout=f,stderr=f,stdin=f,shell=True)
         
         subprocess.run('git push origin master',stdout=f,stderr=f,stdin=f,shell=True)

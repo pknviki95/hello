@@ -1,23 +1,126 @@
-Cloning into 'Python_script'...
-git: 'sheckout' is not a git command. See 'git --help'.
-
-The most similar command is
-	checkout
-commit d5eb4bbd2424149231cdc438a83da8f3d227916d
+fatal: destination path 'Python_script' already exists and is not an empty directory.
+M	Python_program_practice/git_jenkins.py
+M	v_1.0.log
+To https://github.com/pknviki95/hello.git
+ * [new tag]         v_1.0 -> v_1.0
+commit e3d9226098ebfc32b400315dc3c8d1f903a9771a
 Author: vigneshwaran M <vikidotcom95@gmail.com>
-Date:   Fri Feb 7 10:07:30 2020 +0530
+Date:   Sun Feb 9 12:59:29 2020 +0530
 
-    git operations using python scripts
+    added py
 
-diff --git a/Python_program_practice/git_python_scripts/git_python.py b/Python_program_practice/git_python_scripts/git_python.py
-index 499a3be..b0f0204 100644
---- a/Python_program_practice/git_python_scripts/git_python.py
-+++ b/Python_program_practice/git_python_scripts/git_python.py
-@@ -8,5 +8,5 @@ print (repo.git.add( '.' ))
- #commit
- print (repo.git.commit( m='git operations using python scripts' ))
- #now we are one commit ahead#
--print (repo.git.FetchInfo())
-+#print (repo.git.FetchInfo())
- print(dir(git))
-\ No newline at end of file
+diff --git a/Python_program_practice/git_jenkins.py b/Python_program_practice/git_jenkins.py
+index e69de29..0c81e76 100644
+--- a/Python_program_practice/git_jenkins.py
++++ b/Python_program_practice/git_jenkins.py
+@@ -0,0 +1,42 @@
++'''
++3 i/p:
++- git url = https://github.com/pknviki95/Python_script.git
++-tag name = v_1.0
++-tag location/if not given HEAD
++
++store the output value to a file
++tag_name.log
++'''
++
++import subprocess
++
++def git_log(git_url,tag_name,tag_pos):
++    file_name = tag_name+'.log'
++    with open (file_name,'w') as f:
++        subprocess.run('git clone '+git_url ,stdout=f,stderr=f,stdin=f,shell=True)
++
++            
++        if  tag_pos == None:
++            subprocess.run('git sheckout master',stdout=f,stderr=f,stdin=f,shell=True)
++            
++        else:
++            subprocess.run('git sheckout '+tag_pos,stdout=f,stderr=f,stdin=f,shell=True)
++            
++        subprocess.run('git tag '+tag_name ,stdout=f,stderr=f,stdin=f,shell=True) 
++        subprocess.run('git push origin '+tag_name,stdout=f,stderr=f,stdin=f,shell=True)  
++        subprocess.run('git show '+tag_name ,stdout=f,stderr=f,stdin=f,shell=True)
++        
++        subprocess.run('git add .' ,stdout=f,stderr=f,stdin=f,shell=True)
++        git_commit_message = input("your message")
++        subprocess.run('git commit -m '+git_commit_message ,stdout=f,stderr=f,stdin=f,shell=True)
++        
++        subprocess.run('git push origin master',stdout=f,stderr=f,stdin=f,shell=True)
++        subprocess.run('git log --all --oneline'  ,stdout=f,stderr=f,stdin=f,shell=True)
++        
++
++
++
++
++
++git_logging = git_log(git_url = input("enter git_url :" ),tag_name = input("tag_name : " ),tag_pos = input("tag_pos : "))
++print(git_logging)
+diff --git a/Python_script b/Python_script
+new file mode 160000
+index 0000000..1a36508
+--- /dev/null
++++ b/Python_script
+@@ -0,0 +1 @@
++Subproject commit 1a3650835edd45b54eb9db0bd1b70428482887cc
+diff --git a/v_1.0.log b/v_1.0.log
+new file mode 100644
+index 0000000..cc58281
+--- /dev/null
++++ b/v_1.0.log
+@@ -0,0 +1,23 @@
++Cloning into 'Python_script'...
++git: 'sheckout' is not a git command. See 'git --help'.
++
++The most similar command is
++	checkout
++commit d5eb4bbd2424149231cdc438a83da8f3d227916d
++Author: vigneshwaran M <vikidotcom95@gmail.com>
++Date:   Fri Feb 7 10:07:30 2020 +0530
++
++    git operations using python scripts
++
++diff --git a/Python_program_practice/git_python_scripts/git_python.py b/Python_program_practice/git_python_scripts/git_python.py
++index 499a3be..b0f0204 100644
++--- a/Python_program_practice/git_python_scripts/git_python.py
+++++ b/Python_program_practice/git_python_scripts/git_python.py
++@@ -8,5 +8,5 @@ print (repo.git.add( '.' ))
++ #commit
++ print (repo.git.commit( m='git operations using python scripts' ))
++ #now we are one commit ahead#
++-print (repo.git.FetchInfo())
+++#print (repo.git.FetchInfo())
++ print(dir(git))
++\ No newline at end of file
+error: pathspec 'added' did not match any file(s) known to git.
+error: pathspec 'v_1.0' did not match any file(s) known to git.
+To https://github.com/pknviki95/hello.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/pknviki95/hello.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+e3d9226 added py
+d5eb4bb git operations using python scripts
+620df8e git operations using python scripts
+ca8dcd3 git operations using python scripts
+20c1490 git operations using python scripts
+bc1d861 git operations using python scripts
+c3418b1 git operations using python scripts
+6d1bc33 jenkinsfile added to test
+6afc9e1 gitpython script added
+113f507 git operations using python scripts
+63787b0 programs for files updated
+fca1779 Tested for study vscode
+d1a1850 modified boolean operations new function isalnum is added
+73d9b72 string_operations is added
+f7f2393 Basic_string ops
+d9d70f6 new files of input functionsadded
+ddcac98 special_chars.py script
+8295aaa usage_of_comments.py script
+6846887 indentation_usage.py script
+64f0eeb Hello script
+359b19f second commit
+825e211 hello commit

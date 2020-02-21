@@ -1,2 +1,5 @@
 print("hello")
 print("Welcome to python Scripting")
+names= input("enter your name: ")
+print(type(names))
+print('Hello!')
