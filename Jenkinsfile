@@ -37,7 +37,7 @@ pipeline{
         stages{
                 stage('pipeline_steps_parallel_build'){
                         steps{
-                                pipeline(
+                                parallel(
                                         checkoutscm: {
                                                 git 'https://github.com/pknviki95/hello.git'
                                               echo "SCM"
@@ -54,6 +54,7 @@ pipeline{
                         }
                 }
         }
+}
                                         
                                         
         
