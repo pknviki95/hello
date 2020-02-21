@@ -1,4 +1,6 @@
 node{
+        parallel
+        {
         stage ('checkout SCM'){
             git 'https://github.com/pknviki95/hello.git'
         }
@@ -11,6 +13,7 @@ node{
         }
         stage ('Deploy'){
             echo 'Deploy to Docker'
+        }
         }
   }
 
