@@ -1,6 +1,8 @@
 pipeline{
         agent any
         stages{
+                stage ( 'parallel_test){
+                       parallel{
                 stage ('checkout SCM'){
                         steps{
             git 'https://github.com/pknviki95/hello.git'
@@ -23,6 +25,8 @@ pipeline{
             echo 'Deploy to Docker'
         }
         }
+                       }
+          
   }
 }
 
