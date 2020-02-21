@@ -1,7 +1,7 @@
 pipeline
 {
    agent any
-   satges{
+   stages{
         stage ('checkout SCM'){
            steps{
             git 'https://github.com/pknviki95/hello.git'
