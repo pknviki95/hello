@@ -47,7 +47,7 @@ pipeline{
                                         },
                                         test : {
                                                 echo "test"
-                                        }
+                                        },
                                         deploy: {
                                                 echo "Deploy"
                                         })
