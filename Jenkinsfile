@@ -1,7 +1,4 @@
-pipeline
-{
-   nodes{
-   stages{
+nodes{
         stage ('checkout SCM'){
            steps{
             git 'https://github.com/pknviki95/hello.git'
@@ -23,6 +20,5 @@ pipeline
             echo 'Deploy to Docker'
            }
         }
-   }
-}
-}
+  }
+
