@@ -1,4 +1,4 @@
-nodes{
+node{
         stage ('checkout SCM'){
            steps{
             git 'https://github.com/pknviki95/hello.git'
