@@ -1,6 +1,7 @@
 pipeline
 {
    agent any
+   satges{
         stage ('checkout SCM'){
             git 'https://github.com/pknviki95/hello.git'
         }
@@ -14,5 +15,6 @@ pipeline
         stage ('Deploy'){
             echo 'Deploy to Docker'
         }
+   }
 }
 
