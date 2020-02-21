@@ -1,5 +1,6 @@
-
-    node{
+pipeline
+{
+   node{
         stage ('checkout SCM'){
             git 'https://github.com/pknviki95/hello.git'
         }
