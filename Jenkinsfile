@@ -14,6 +14,5 @@ pipeline
         stage ('Deploy'){
             echo 'Deploy to Docker'
         }
-
-        }
 }
+
