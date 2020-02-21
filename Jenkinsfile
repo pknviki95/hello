@@ -1,19 +1,28 @@
-node{
-        parallel
-        {
-        stage ('checkout SCM'){
+pipeline{
+        agents any
+        stages{
+                stage ('checkout SCM'){
+                        steps{
             git 'https://github.com/pknviki95/hello.git'
-        }
-         stage ('build'){
+                        }
+                }
+                stage ('build'){
+                        steps{
+                        
             fileExists '/home/pknviki95/Desktop/Python'
             sh 'ls'
-         }
+                        }
+                }
         stage ('test'){
+                steps{
                      echo 'test success'    
+                }
         }
-        stage ('Deploy'){
+                stage ('Deploy'){
+                        steps{
             echo 'Deploy to Docker'
         }
         }
   }
+}
 
